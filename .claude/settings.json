@@ -27,6 +27,7 @@
     "typescript-lsp@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
     "lisa-phaser@lisa": true,
+    "lisa-wiki@lisa": true,
     "atlassian@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {

@@ -3,7 +3,7 @@
 An opinionated, **agent-maintained** Phaser 4 + TypeScript + Vite starter, governed
 by [Lisa](https://github.com/CodySwannGT/lisa). Every best practice is enforced by
 lint rules, type checks, git hooks, and CI — and nothing is "done" until an agent
-has actually **played the game** and confirmed it (the verification/UAT suite).
+has actually **played the game** and confirmed it (verification = UAT).
 
 The included game ("Collector" — slide to catch falling items) is a vertical slice
 whose job is to exercise every enforced pattern: a pure deterministic simulation,
@@ -31,41 +31,13 @@ bun run dev        # http://localhost:5173  (arrows / A,D / tap to move; Space t
 | `bun run knip:check` | Dead-code detection |
 | `bun run size` | Bundle-size budget |
 
-## Architecture
+## Documentation
 
-```
-src/
-  logic/        # PURE, engine-free simulation (NO phaser imports) — unit-tested, deterministic
-  scenes/       # thin Phaser adapters: Boot → Preloader → MainMenu → Game → GameOver
-  services/     # cross-cutting: events bus, input, sound, save (versioned localStorage)
-  uat/bridge.ts # verification bridge (window.__VERIFY__), enabled with ?uat=1
-  consts.ts     # typed scene keys, event names, tunables
-  assets.ts     # typed asset keys (programmatic placeholders here)
-  game/config.ts, main.ts
-tests/
-  logic/        # Vitest unit tests (pure core)
-  e2e/          # Playwright verification (UAT) — proves the game actually plays
-```
+The canonical documentation is the **Lisa wiki** in [`wiki/`](./wiki/start-here.md).
+This README is a thin pointer.
 
-The cardinal rule: **all game rules live in `src/logic` with zero Phaser imports**
-(lint-enforced). Scenes are thin orchestrators that render that state and feed it
-input. That is what makes the game testable and deterministic.
-
-## The opinions (and how they're enforced)
-
-- **Phaser 4 only** — removed v3 idioms are lint-banned.
-- **Determinism** — no `Math.random` / `Date.now` in game code (seeded RNG); enforced.
-- **No allocation/creation in `update()`** — pooled sprites; custom ESLint rules.
-- **Pure-logic boundary** — `no phaser` imports under `src/logic`.
-- **Typed keys** — no raw string asset/scene/event keys.
-- **Storage only via `SaveService`**; **events only via the EventsCenter** (never `game.events`).
-- **Strict TypeScript** — `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, etc.
-
-See [CONVENTIONS.md](./CONVENTIONS.md) for the full list and the un-lintable ones.
-
-## Verification (UAT)
-
-`bun run test:e2e` boots the production build and drives the canvas through the
-in-game `window.__VERIFY__` bridge — seeding the RNG, injecting input, and reading
-state — to confirm real behavior (boot, input, scoring, game-over). A change isn't
-done until a verification spec proves it.
+- [**Start here**](./wiki/start-here.md) — orientation and the wiki map
+- [Architecture overview](./wiki/architecture/overview.md) — pure-logic core, thin scenes, services, the verification bridge
+- [Coding conventions](./wiki/conventions/coding-conventions.md) — the enforced rules and the judgment calls
+- [Locked architecture decisions](./wiki/decisions/0001-locked-architecture-decisions.md) — the opinions and why
+- [Run and verify](./wiki/playbooks/run-and-verify.md) — running the game and the verification = UAT loop
