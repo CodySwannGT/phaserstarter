@@ -15,6 +15,9 @@
       "Read(./.entire/metadata/**)"
     ]
   },
+  "disabledMcpjsonServers": [
+    "phaser-editor"
+  ],
   "enabledPlugins": {
     "lisa@lisa": true,
     "safety-net@cc-marketplace": true,
@@ -44,8 +47,5 @@
       }
     }
   },
-  "plansDirectory": "./plans",
-  "disabledMcpjsonServers": [
-    "phaser-editor"
-  ]
+  "plansDirectory": "./plans"
 }

@@ -1,3 +1,8 @@
 {
-  "harness": "claude"
+  "harness": "claude",
+  "wiki": {
+    "source": {
+      "path": "wiki"
+    }
+  }
 }
