@@ -89,7 +89,8 @@
     "underscore": "^1.13.8",
     "vite": "$vite",
     "ws": ">=8.21.0",
-    "form-data": ">=4.0.6"
+    "form-data": ">=4.0.6",
+    "minimist": "^1.2.8"
   },
   "overrides": {
     "@isaacs/brace-expansion": "^5.0.1",
@@ -102,7 +103,8 @@
     "underscore": "^1.13.8",
     "vite": "$vite",
     "ws": ">=8.21.0",
-    "form-data": ">=4.0.6"
+    "form-data": ">=4.0.6",
+    "minimist": "^1.2.8"
   },
   "packageManager": "bun@1.3.11",
   "trustedDependencies": [
