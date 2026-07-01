@@ -24,6 +24,13 @@
 |---|---|---|
 | [0001 — Locked architecture decisions](decisions/0001-locked-architecture-decisions.md) | The opinionated, locked choices and why | 2026-06-27 |
 
+## Personas
+| Page | Summary | Updated |
+|---|---|---|
+| [README](personas/README.md) | The role/instance contract feeding the lisa-phaser persona subagents | 2026-06-30 |
+| [target-players](personas/target-players.md) | Audience archetypes the target-player / player-advocate subagents speak for | 2026-06-30 |
+| [stakeholders](personas/stakeholders.md) | Publisher, market, and production constraints for the business-lens subagents | 2026-06-30 |
+
 ## Playbooks
 | Page | Summary | Updated |
 |---|---|---|
