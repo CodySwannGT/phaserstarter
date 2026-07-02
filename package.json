@@ -86,10 +86,10 @@
     "lodash": ">=4.18.1",
     "multer": ">=2.2.0",
     "undici": ">=6.27.0",
+    "underscore": "^1.13.8",
     "vite": "$vite",
     "ws": ">=8.21.0",
     "form-data": ">=4.0.6",
-    "underscore": "^1.13.8",
     "minimist": "^1.2.8"
   },
   "overrides": {
@@ -100,6 +100,7 @@
     "lodash": ">=4.18.1",
     "multer": ">=2.2.0",
     "undici": ">=6.27.0",
+    "underscore": "^1.13.8",
     "vite": "$vite",
     "ws": ">=8.21.0",
     "form-data": ">=4.0.6",
